@@ -1,0 +1,313 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(135deg, #e0e7ff 0%, #f3e8ff 100%);
+  color: #1e1b2e;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 2rem 1rem;
+}
+
+h1 {
+  color: #4f46e5;
+  font-size: 10rem;
+  text-align: center;
+  opacity: 0.3;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-shadow: 0 12px 40px rgba(79, 70, 229, 0.15);
+  margin-bottom: 0.5rem;
+  user-select: none;
+}
+
+form {
+  box-shadow: 0 20px 60px rgba(79, 70, 229, 0.12), 0 8px 24px rgba(79, 70, 229, 0.06);
+  max-width: 100%;
+  width: 480px;
+  border-radius: 28px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.4s ease;
+}
+
+form:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 28px 72px rgba(79, 70, 229, 0.18), 0 12px 32px rgba(79, 70, 229, 0.08);
+}
+
+.input {
+  border: none;
+  background: transparent;
+  color: #1e1b2e;
+  font-size: 1.25rem;
+  padding: 1.25rem 2rem;
+  display: block;
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  transition: background 0.3s ease;
+}
+
+.input::placeholder {
+  color: #b9b0d0;
+  font-weight: 200;
+}
+
+.input:focus {
+  outline: none;
+  background: rgba(79, 70, 229, 0.04);
+}
+
+.todos {
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  border-top: 1px solid rgba(79, 70, 229, 0.08);
+}
+
+.todos li {
+  border-top: 1px solid rgba(79, 70, 229, 0.06);
+  cursor: pointer;
+  font-size: 1.1rem;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: background 0.25s ease, padding-left 0.25s ease, color 0.25s ease;
+  color: #1e1b2e;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  position: relative;
+}
+
+.todos li:first-child {
+  border-top: none;
+}
+
+.todos li:hover {
+  background: rgba(79, 70, 229, 0.05);
+  padding-left: 2.4rem;
+}
+
+/* custom bullet – FontAwesome check circle */
+.todos li::before {
+  content: "\f0c8";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 400;
+  font-size: 1.1rem;
+  color: #b9b0d0;
+  transition: color 0.3s ease, transform 0.25s ease;
+  flex-shrink: 0;
+  width: 1.4rem;
+  text-align: center;
+}
+
+.todos li:hover::before {
+  color: #4f46e5;
+  transform: scale(1.1);
+}
+
+.todos li.completed {
+  color: #a8a0b8;
+  text-decoration: line-through;
+  text-decoration-color: #4f46e580;
+  text-decoration-thickness: 2px;
+}
+
+.todos li.completed::before {
+  content: "\f14a";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  color: #4f46e5;
+  transform: scale(1);
+}
+
+.todos li.completed:hover::before {
+  transform: scale(1.15);
+}
+
+/* delete hint – trash icon on hover */
+.todos li::after {
+  content: "\f2ed";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-size: 0.85rem;
+  color: #d5c6e0;
+  margin-left: auto;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.25s ease;
+  transform: translateX(8px);
+  flex-shrink: 0;
+}
+
+.todos li:hover::after {
+  opacity: 0.6;
+  transform: translateX(0);
+}
+
+small {
+  color: #9a8fb0;
+  margin-top: 2.5rem;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 300;
+  letter-spacing: 0.6px;
+  line-height: 1.7;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  padding: 0.6rem 1.6rem;
+  border-radius: 60px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 4px 16px rgba(79, 70, 229, 0.04);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+small:hover {
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 6px 24px rgba(79, 70, 229, 0.08);
+}
+
+/* responsive tweaks */
+@media (max-width: 520px) {
+  form {
+    width: 100%;
+    border-radius: 20px;
+  }
+
+  .input {
+    font-size: 1rem;
+    padding: 1rem 1.5rem;
+  }
+
+  .todos li {
+    font-size: 0.95rem;
+    padding: 0.85rem 1.5rem;
+    gap: 0.75rem;
+  }
+
+  .todos li::before {
+    font-size: 0.95rem;
+    width: 1.2rem;
+  }
+
+  .todos li:hover {
+    padding-left: 1.8rem;
+  }
+
+  small {
+    font-size: 0.7rem;
+    padding: 0.5rem 1.2rem;
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .input {
+    font-size: 0.9rem;
+    padding: 0.85rem 1.2rem;
+  }
+
+  .todos li {
+    font-size: 0.85rem;
+    padding: 0.7rem 1.2rem;
+  }
+
+  .todos li::before {
+    font-size: 0.85rem;
+    width: 1rem;
+  }
+
+  .todos li::after {
+    font-size: 0.7rem;
+  }
+
+  small {
+    font-size: 0.6rem;
+    padding: 0.4rem 1rem;
+  }
+}
+
+/* empty state hint */
+.todos:empty::after {
+  content: "add a task above";
+  display: block;
+  padding: 2rem 2rem 1.8rem;
+  text-align: center;
+  color: #b9b0d0;
+  font-size: 0.9rem;
+  font-weight: 200;
+  letter-spacing: 0.6px;
+}
+
+@media (max-width: 520px) {
+  .todos:empty::after {
+    padding: 1.5rem 1.5rem 1.2rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* smooth entrance for todo items */
+.todos li {
+  animation: fadeSlide 0.35s ease forwards;
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.todos li:nth-child(1) {
+  animation-delay: 0.02s;
+}
+.todos li:nth-child(2) {
+  animation-delay: 0.06s;
+}
+.todos li:nth-child(3) {
+  animation-delay: 0.10s;
+}
+.todos li:nth-child(4) {
+  animation-delay: 0.14s;
+}
+.todos li:nth-child(5) {
+  animation-delay: 0.18s;
+}
+.todos li:nth-child(6) {
+  animation-delay: 0.22s;
+}
+.todos li:nth-child(7) {
+  animation-delay: 0.26s;
+}
+.todos li:nth-child(8) {
+  animation-delay: 0.30s;
+}
+.todos li:nth-child(9) {
+  animation-delay: 0.34s;
+}
+.todos li:nth-child(10) {
+  animation-delay: 0.38s;
+}
+
+@keyframes fadeSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
