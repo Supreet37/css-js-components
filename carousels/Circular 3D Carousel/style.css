@@ -1,0 +1,92 @@
+* { box-sizing: border-box; }
+html, body{
+  margin:0; height:100%;
+  background: radial-gradient(ellipse at 50% 30%, #16161f 0%, #060608 70%);
+  color: #efece4;
+  font-family: 'Jost', sans-serif;
+  overflow: hidden;
+}
+.void{
+  height:100vh;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap: 2rem;
+}
+.kicker{
+  font-size:.75rem;
+  letter-spacing:.3em;
+  text-transform:uppercase;
+  color:#8a8577;
+  margin:0;
+}
+.ring-stage{
+  position:relative;
+  width: 520px; height: 320px;
+  perspective: 1400px;
+}
+.ring{
+  position:absolute;
+  width:100%; height:100%;
+  transform-style: preserve-3d;
+  transition: transform .8s cubic-bezier(.22,.8,.3,1);
+}
+.panel{
+  position:absolute;
+  top:50%; left:50%;
+  width:190px; height:260px;
+  margin-top:-130px; margin-left:-95px;
+  border-radius: 8px;
+  overflow:hidden;
+  box-shadow: 0 30px 50px rgba(0,0,0,.6);
+  backface-visibility: hidden;
+}
+.panel img{
+  width:100%; height:100%;
+  object-fit:cover;
+  display:block;
+  filter: saturate(.9) brightness(.85);
+  transition: filter .5s ease;
+}
+.panel.active img{ filter: saturate(1.05) brightness(1.05); }
+.panel::after{
+  content:'';
+  position:absolute; inset:0;
+  background: rgba(0,0,0,.35);
+  transition: background .5s ease;
+}
+.panel.active::after{ background: rgba(0,0,0,0); }
+
+.floor{
+  position:absolute;
+  bottom:-40px; left:10%; width:80%; height:40px;
+  background: radial-gradient(ellipse at center, rgba(255,255,255,.08), transparent 70%);
+  filter: blur(4px);
+}
+
+.controls{
+  display:flex; align-items:center; gap:1.4rem;
+}
+.controls h2{
+  font-family:'Cormorant Garamond', serif;
+  font-weight:600;
+  font-size:1.6rem;
+  margin:0;
+  min-width:180px;
+  text-align:center;
+  letter-spacing:.02em;
+}
+.rot-btn{
+  width:46px; height:46px;
+  border-radius:50%;
+  border:1px solid rgba(239,236,228,.25);
+  background: transparent;
+  color:#efece4;
+  font-size:1.1rem;
+  cursor:pointer;
+  transition: background .2s ease, transform .2s ease;
+}
+.rot-btn:hover{ background: rgba(239,236,228,.08); transform: scale(1.06); }
+.rot-btn:focus-visible{ outline: 2px solid #cbb98a; outline-offset:2px; }
+
+@media (prefers-reduced-motion: reduce){
+  .ring{ transition:none; }
+}
