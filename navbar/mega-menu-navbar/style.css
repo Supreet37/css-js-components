@@ -1,0 +1,76 @@
+:root {
+  --ink: #191c1f;
+  --bg: #ffffff;
+  --accent: #e0672c;
+  --muted: #656b70;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Sora', sans-serif; color: var(--ink); background: var(--bg); }
+
+.nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 48px;
+  border-bottom: 1px solid rgba(25,28,31,0.08);
+}
+.logo { font-weight: 700; font-size: 1.2rem; color: var(--ink); text-decoration: none; }
+.links { display: flex; align-items: center; gap: 6px; list-style: none; }
+.links > li > a, .mega-toggle {
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.92rem;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: none;
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: color .2s ease, background .2s ease;
+}
+.links > li > a:hover, .mega-toggle:hover { color: var(--ink); background: rgba(25,28,31,0.05); }
+.mega-toggle i { font-style: normal; font-size: 0.7rem; transition: transform .2s ease; }
+.mega-item.open .mega-toggle i { transform: rotate(180deg); }
+
+.mega-item { position: static; }
+.mega-panel {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border-top: 1px solid rgba(25,28,31,0.08);
+  box-shadow: 0 20px 40px rgba(25,28,31,0.1);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  padding: 40px 48px;
+  opacity: 0;
+  transform: translateY(-8px);
+  pointer-events: none;
+  transition: opacity .25s ease, transform .25s ease;
+  z-index: 100;
+}
+.mega-item.open .mega-panel { opacity: 1; transform: translateY(0); pointer-events: auto; }
+
+.mega-col { display: flex; flex-direction: column; gap: 4px; }
+.mega-col h4 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: #9a9fa5; margin-bottom: 10px; }
+.mega-col a { color: var(--ink); text-decoration: none; font-size: 0.92rem; padding: 6px 0; transition: color .15s ease; }
+.mega-col a:hover { color: var(--accent); }
+.mega-col.featured {
+  background: #fff6f0;
+  border-radius: 12px;
+  padding: 20px;
+  margin: -20px;
+}
+.mega-col.featured p { color: var(--muted); font-size: 0.88rem; line-height: 1.5; margin: 8px 0 14px; }
+.mega-cta { font-weight: 600; color: var(--accent) !important; }
+
+.hero { max-width: 600px; margin: 100px auto; text-align: center; padding: 0 24px; }
+.hero h1 { font-size: clamp(2rem, 5vw, 2.7rem); margin-bottom: 16px; }
+.hero p { color: var(--muted); line-height: 1.6; }
