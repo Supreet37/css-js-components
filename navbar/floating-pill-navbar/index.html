@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+<title>Floating Pill Navbar</title>
+</head>
+<body>
+  <div class="page">
+    <nav class="pill-nav" id="pillNav">
+      <span class="pill-highlight" id="pillHighlight"></span>
+      <a href="#" class="pill-link active" data-index="0">Home</a>
+      <a href="#" class="pill-link" data-index="1">Work</a>
+      <a href="#" class="pill-link" data-index="2">Craft</a>
+      <a href="#" class="pill-link" data-index="3">Contact</a>
+    </nav>
+
+    <main class="hero">
+      <h1>Floating Pill Navbar</h1>
+      <p>Click any link — a highlight pill slides behind it, position and width calculated in JS from the clicked element's own bounding box.</p>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
