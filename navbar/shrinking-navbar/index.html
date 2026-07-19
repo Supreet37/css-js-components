@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+<title>Shrinking Navbar</title>
+</head>
+<body>
+  <nav class="nav" id="nav">
+    <a href="#" class="logo">Aster</a>
+    <ul class="links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Product</a></li>
+      <li><a href="#">Pricing</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <h1>Shrinking Navbar</h1>
+    <p>Scroll down slowly — the nav's padding and logo size shrink smoothly instead of just adding a shadow.</p>
+  </header>
+
+  <main class="content">
+    <section><h2>Keep scrolling</h2><p>The transition is handled with CSS custom properties toggled by a scroll-position class.</p></section>
+    <section><h2>Still here</h2><p>Notice the nav never leaves the top — only its size changes.</p></section>
+    <section><h2>Last bit</h2><p>Scroll back up to see it expand again.</p></section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
