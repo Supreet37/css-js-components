@@ -1,0 +1,1 @@
+<img src="./Screenshot 2026-07-19 195622.png" height="50%">
