@@ -1,0 +1,80 @@
+:root {
+  --ink: #201f2b;
+  --bg: #ffffff;
+  --accent: #a13ce0;
+  --muted: #6a6875;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Manrope', sans-serif; color: var(--ink); background: var(--bg); }
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 80px;
+  border-bottom: 1px solid rgba(32,31,43,0.08);
+}
+.logo { font-weight: 700; font-size: 1.2rem; color: var(--ink); text-decoration: none; }
+.links { display: flex; align-items: center; gap: 4px; list-style: none; }
+.links > li > a, .dropdown-toggle {
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.92rem;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: none;
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+  text-align: left;
+  transition: color .2s ease, background .2s ease;
+}
+.links > li > a:hover, .dropdown-toggle:hover { color: var(--ink); background: rgba(32,31,43,0.05); }
+i { font-style: normal; font-size: 0.7rem; margin-left: auto; }
+
+.dropdown { position: relative; }
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  min-width: 220px;
+  background: #fff;
+  border: 1px solid rgba(32,31,43,0.08);
+  border-radius: 12px;
+  box-shadow: 0 12px 28px rgba(32,31,43,0.14);
+  list-style: none;
+  padding: 8px;
+  opacity: 0;
+  transform: translateY(-6px);
+  pointer-events: none;
+  transition: opacity .2s ease, transform .2s ease;
+  z-index: 50;
+}
+.dropdown.open > .dropdown-menu { opacity: 1; transform: translateY(0); pointer-events: auto; }
+
+.sub-menu {
+  top: -8px;
+  left: calc(100% + 8px);
+  min-width: auto;
+}
+
+.dropdown-menu li > a, .dropdown-menu li > .dropdown-toggle {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 8px;
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.dropdown-menu li > a:hover, .dropdown-menu li > .dropdown-toggle:hover { background: rgba(161,60,224,0.08); color: var(--accent); }
+.dropdown.sub.open > .dropdown-toggle { background: rgba(161,60,224,0.08); color: var(--accent); }
+
+.hero { max-width: 580px; margin: 100px auto; text-align: center; padding: 0 24px; }
+.hero h1 { font-size: clamp(2rem, 5vw, 2.6rem); margin-bottom: 16px; }
+.hero p { color: var(--muted); line-height: 1.6; }

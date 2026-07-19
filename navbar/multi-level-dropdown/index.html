@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+<title>Multi-Level Dropdown Navbar</title>
+</head>
+<body>
+  <nav class="nav">
+    <a href="#" class="logo">Nested</a>
+    <ul class="links">
+      <li><a href="#">Home</a></li>
+      <li class="dropdown">
+        <button class="dropdown-toggle">Catalog <i>▾</i></button>
+        <ul class="dropdown-menu">
+          <li><a href="#">Overview</a></li>
+          <li class="dropdown sub">
+            <button class="dropdown-toggle">Electronics <i>▸</i></button>
+            <ul class="dropdown-menu sub-menu">
+              <li><a href="#">Phones</a></li>
+              <li><a href="#">Laptops</a></li>
+              <li><a href="#">Audio</a></li>
+            </ul>
+          </li>
+          <li class="dropdown sub">
+            <button class="dropdown-toggle">Home & Living <i>▸</i></button>
+            <ul class="dropdown-menu sub-menu">
+              <li><a href="#">Furniture</a></li>
+              <li><a href="#">Decor</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="#">Deals</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="hero">
+    <h1>Multi-Level Dropdown</h1>
+    <p>Click "Catalog", then hover/click a category with a ▸ — a second-level menu opens beside it.</p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
