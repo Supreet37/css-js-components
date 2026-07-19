@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+<title>Dropdown Navbar</title>
+</head>
+<body>
+  <nav class="nav">
+    <a href="#" class="logo">Ledger</a>
+    <ul class="links">
+      <li><a href="#">Home</a></li>
+      <li class="dropdown">
+        <button class="dropdown-toggle">Products <i>▾</i></button>
+        <ul class="dropdown-menu">
+          <li><a href="#">Invoicing</a></li>
+          <li><a href="#">Payroll</a></li>
+          <li><a href="#">Expense tracking</a></li>
+          <li><a href="#">Tax filing</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Pricing</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="hero">
+    <h1>Dropdown Navbar</h1>
+    <p>Click "Products" (or hover on desktop) — a submenu drops down beneath it. Click elsewhere to close it.</p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
